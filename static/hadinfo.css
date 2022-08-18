@@ -1,0 +1,7 @@
+body {
+    padding: 1rem 1.1rem 1rem 1.1rem;
+}
+
+.warp {
+    word-wrap: break-word;
+}
