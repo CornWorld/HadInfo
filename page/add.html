@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Add · HadInfo</title>
+    <link href="/static/semantic.min.css" rel="stylesheet">
+    <link href="/static/hadinfo.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="ui pointing menu">
+    <a class="item" href="/">
+        Home
+    </a>
+    <a class="active item">
+        Add
+    </a>
+    <a class="item" href="/view">
+        View
+    </a>
+    <div class="ui right menu">
+        <a class="item" href="">
+            Github
+        </a>
+    </div>
+</div>
+<div class="ui segment">
+    <form action="#" class="ui equal width form" id="addForm" method="post">
+        <h4 class="ui diving header">Add</h4>
+        <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" placeholder="Title" type="text"/>
+        </div>
+        <div class="required field">
+            <label for="content_input">Content</label>
+            <textarea id="content_input" placeholder="Content"></textarea>
+        </div>
+        <label><textarea hidden="hidden" id="content" name="content"></textarea></label>
+        <div class="field">
+            <label for="lang">Lang</label>
+            <select class="ui search dropdown" id="lang" name="lang">
+                <option value="plain">PlainText</option>
+                <option value="cpp">C++</option>
+            </select>
+        </div>
+        <div class="required field">
+            <div class="ui checkbox">
+                <input checked="checked" class="hidden" id="agreement" name="agreement" tabindex="0" type="checkbox">
+                <label for="agreement">I will follow the <a href="/rules">rules</a>.</label>
+            </div>
+        </div>
+        <a class="ui button" id="addFormSubmitButton">Submit</a>
+    </form>
+</div>
+
+<script src="/static/jquery-3.6.1.min.js"></script>
+<script src="/static/semantic.min.js"></script>
+<script defer="defer" src="/static/hadinfo.js"></script>
+</body>
+</html>

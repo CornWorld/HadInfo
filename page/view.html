@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title | View · HadInfo</title>
+    <link href="/static/semantic.min.css" rel="stylesheet">
+    <link href="/static/hadinfo.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="ui pointing menu">
+    <a class="item" href="/">
+        Home
+    </a>
+    <a class="item" href="/add">
+        Add
+    </a>
+    <a class="active item">
+        View
+    </a>
+    <div class="ui right menu">
+        <a class="item" href="">
+            Github
+        </a>
+    </div>
+</div>
+<div class="ui segment">
+    <h3 class="ui header">
+        <span class="content">{{ .title }}</span>
+    </h3>
+    <div class="ui mini labels">
+        <div class="ui teal label">
+            <i class="eye icon"></i>
+            <div class="detail">0</div>
+        </div>
+        <div class="ui violet label">
+            <i class="id card icon"></i>
+            <div class="detail">{{ .author }}</div>
+        </div>
+        <div class="ui purple label">
+            <i class="calendar icon"></i>
+            <div class="detail">2020-08-31 00:00:00 UTC+8</div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui text container">
+        <p class="warp">
+            {{ .text }}
+        </p>
+    </div>
+</div>
+
+<script src="/static/jquery-3.6.1.min.js"></script>
+<script src="/static/semantic.min.js"></script>
+<script defer="defer" src="/static/hadinfo.js"></script>
+</body>
+</html>
