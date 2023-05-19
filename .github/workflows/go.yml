@@ -38,7 +38,7 @@ jobs:
           - unzip restcli.zip
 
       - name: Http Test
-        run:
+        run: |
           - ls # for test
           - hadinfo
           - java -jar restcli.jar -e "test" api.http
