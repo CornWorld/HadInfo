@@ -14,15 +14,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.19
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
 
-    - name: Build
-      run: go build -v ./...
+      - name: Go Build
+        run: go build -v ./... -o /bin/hadinfo
 
-    - name: Test
-      run: go test -v ./...
+      - name: Go Test
+        run: go test -v ./...
+
+      - name: Set up Java
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - name: Set up restcli
+        run:
+          - wget https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip
+          - unzip restcli.zip
+
+      - name: Http Test
+        run:
+          - ls # for test
+          - hadinfo
+          - java -jar restcli.jar -e "test" api.http
