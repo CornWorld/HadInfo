@@ -33,12 +33,7 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
       - name: Set up restcli
-        run: |
-          - curl -O https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip
-          - unzip restcli.zip
+        run: curl -O https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip && unzip restcli.zip
 
       - name: Http Test
-        run: |
-          - ls # for test
-          - hadinfo
-          - java -jar restcli.jar -e "test" api.http
+        run: (./hadinfo &) && java -jar restcli.jar -e "test" api.http
