@@ -34,7 +34,7 @@ jobs:
           java-version: '11'
       - name: Set up restcli
         run: |
-          - wget https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip
+          - curl -O https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip
           - unzip restcli.zip
 
       - name: Http Test
