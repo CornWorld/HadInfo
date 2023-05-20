@@ -34,7 +34,7 @@ jobs:
           java-version: '11'
 
       - name: Set up restcli
-        run: curl -o restcli.zip -v https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip && jar xvf restcli.zip
+        run: curl -o restcli.zip -L -v https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip && jar xvf restcli.zip
 
       - name: Http Test
         run: (./hadinfo &) && java -jar restcli.jar -e "test" api.http
