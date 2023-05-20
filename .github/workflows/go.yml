@@ -42,4 +42,4 @@ jobs:
         run: echo "${CONFIG_INI}" > hadInfo.ini
 
       - name: Http Test
-        run: (./hadInfo &) && sleep 3s && java -jar restcli.jar -e "test" api.http
+        run: ls && (./hadInfo &) && sleep 3s && java -jar restcli.jar -e "test" api.http
