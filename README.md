@@ -27,3 +27,14 @@ Usage:
 ```shell
 ./hadInfo -config ./anotherConfig.ini
 ```
+
+Config file content example (also the default value):
+```ini
+[db]
+host = localhost
+port = 5432
+user = postgres
+password = hadInfo
+sslMode = disable
+name = hadInfo
+```
