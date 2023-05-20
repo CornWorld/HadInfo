@@ -58,7 +58,11 @@ func handleViewPastePage(c *gin.Context) {
 			"meta":   paste.Meta,
 			"text":   string(v),
 		})
+		return
 	}
+	c.JSON(http.StatusForbidden, gin.H{
+		"message": "item type cannot be handled",
+	})
 }
 
 func handleViewPasteForm(c *gin.Context) {
@@ -75,7 +79,7 @@ func handleViewPasteForm(c *gin.Context) {
 		})
 		return
 	}
-	c.JSON(http.StatusBadRequest, gin.H{
-		"message": "fallback",
+	c.JSON(http.StatusForbidden, gin.H{
+		"message": "item type cannot be handled",
 	})
 }
