@@ -73,6 +73,7 @@ func handleViewPasteForm(c *gin.Context) {
 			"meta":   paste.Meta,
 			"text":   v,
 		})
+		return
 	}
 	c.JSON(http.StatusBadRequest, gin.H{
 		"message": "fallback",

@@ -1,6 +1,12 @@
 GET http://localhost:3000/api/ping
 Accept: application/json
 
+
+###
+
+GET http://localhost:3000/api/v/6083af3a9b32a139
+Accept: application/json
+
 ###
 
 POST http://localhost:3000/api/add
@@ -8,9 +14,3 @@ Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 
 title=testawa&author=CornWorld&lang=plain&content=dGVzdHRlc3R0ZXN0
-
-###
-
-GET http://localhost:3000/api/v/6083af3a9b32a139
-
-Accept: application/json
