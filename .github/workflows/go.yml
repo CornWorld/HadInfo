@@ -36,5 +36,10 @@ jobs:
       - name: Set up restcli
         run: curl -o restcli.zip -L https://github.com/restcli/restcli/releases/download/v2.0.1/restcli.zip && jar xvf restcli.zip
 
+      - name: Save config file
+        env:
+          CONFIG_INI: ${{ secrets.configIni }}
+        run: echo "${CONFIG_INI}" > hadInfo.ini
+
       - name: Http Test
         run: (./hadInfo &) && sleep 3s && java -jar restcli.jar -e "test" api.http
