@@ -25,7 +25,7 @@ func SqlQueryExist(sql string, arg ...any) bool {
 	if err != nil {
 		count = 0
 	}
-	r.Close()
+	_ = r.Close()
 	return count != 0
 }
 

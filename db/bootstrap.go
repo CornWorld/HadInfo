@@ -31,5 +31,5 @@ func Bootstrap() {
 }
 
 func Exit() {
-	db.Close()
+	_ = db.Close()
 }

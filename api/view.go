@@ -11,7 +11,7 @@ import (
 
 func queryItem(itemId _type.ItemId) _type.Item {
 	r := db.SqlQuery(db.QueryItem, itemId)
-	defer r.Close()
+	defer func() { _ = r.Close() }()
 
 	ret := _type.Item{}
 
@@ -28,7 +28,7 @@ func queryItem(itemId _type.ItemId) _type.Item {
 
 func queryPaste(pasteId _type.PasteId) _type.Paste {
 	r := db.SqlQuery(db.QueryPaste, pasteId)
-	defer r.Close()
+	defer func() { _ = r.Close() }()
 
 	ret := _type.Paste{}
 	meta := ""

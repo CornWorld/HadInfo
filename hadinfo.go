@@ -10,13 +10,7 @@ import (
 var configFile string
 
 const defaultConfigPath = "./hadInfo.ini"
-
-func main() {
-	flag.StringVar(&configFile, "config", defaultConfigPath, "config file path")
-
-	flag.Parse()
-
-	err := ini.LoadStrings(`
+const defaultConfigOptions = `
 	[db]
 	host = localhost
 	port = 5432
@@ -24,8 +18,13 @@ func main() {
 	password = hadInfo
 	sslMode = disable
 	name = hadInfo
-	`) // Load default config
-	if err != nil {
+	`
+
+func main() {
+	flag.StringVar(&configFile, "config", defaultConfigPath, "config file path")
+	flag.Parse()
+
+	if err := ini.LoadStrings(defaultConfigOptions); err != nil {
 		panic(err)
 	}
 
