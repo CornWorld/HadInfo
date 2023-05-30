@@ -3,9 +3,11 @@ module hadInfo
 go 1.18
 
 require (
+	github.com/antonfisher/nested-logrus-formatter v1.3.1
 	github.com/gin-gonic/gin v1.8.1
 	github.com/gookit/ini/v2 v2.2.2
 	github.com/lib/pq v1.10.9
+	github.com/sirupsen/logrus v1.9.2
 )
 
 require (

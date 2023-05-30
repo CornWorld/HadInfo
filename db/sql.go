@@ -2,7 +2,7 @@ package db
 
 import (
 	"database/sql"
-	"log"
+	"github.com/sirupsen/logrus"
 	"strings"
 )
 
@@ -17,7 +17,7 @@ const (
 func SqlQueryExist(sql string, arg ...any) bool {
 	r, err := db.Query(strings.Replace(sql, "SELECT *", "SELECT count(*)", 1), arg...)
 	if err != nil {
-		log.Fatal("PGSQL Statements Error(Exist): ", err)
+		logrus.Fatal("PGSQL Statements Error(Exist): ", err)
 	}
 	var count int
 	r.Next()
@@ -32,7 +32,7 @@ func SqlQueryExist(sql string, arg ...any) bool {
 func SqlQuery(sql string, arg ...any) *sql.Rows {
 	r, err := db.Query(sql, arg...)
 	if err != nil {
-		log.Fatal("PGSQL Statements Error(Query): ", err)
+		logrus.Fatal("PGSQL Statements Error(Query): ", err)
 	}
 	return r
 }
@@ -40,7 +40,7 @@ func SqlQuery(sql string, arg ...any) *sql.Rows {
 func SqlExec(sql string, arg ...any) sql.Result {
 	r, err := db.Exec(sql, arg...)
 	if err != nil {
-		log.Fatal("PGSQL Statements Error(Exec): ", err, ' ', sql, ' ', arg)
+		logrus.Fatal("PGSQL Statements Error(Exec): ", err, ' ', sql, ' ', arg)
 	}
 	return r
 }
